@@ -1,0 +1,19 @@
+{
+  "compilerOptions": {
+    "removeComments": true,
+
+    "baseUrl": ".",
+    "paths": {
+      "@/*": ["src/*"]
+    },
+
+    // Basic linting:
+    "strict": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "noFallthroughCasesInSwitch": true,
+    "noImplicitAny": true
+  },
+
+  "include": ["src"]
+}
