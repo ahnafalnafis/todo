@@ -2,9 +2,10 @@ name: Unit tests
 
 on:
   push:
-    branches: ["master"]
+    paths: ["tests/**"]
+
   pull_request:
-    branches: ["master"]
+    paths: ["tests/**"]
 
 jobs:
   build:
