@@ -7,5 +7,3 @@ export const task_data: Task = {
   status: TaskStatus.TODO,
   categories: ["very easy", "low"],
 };
-
-export const json_task_data = JSON.stringify(task_data);

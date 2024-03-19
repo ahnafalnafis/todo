@@ -1,15 +1,17 @@
 import { describe, expect, expectTypeOf, test } from "vitest";
 import { TaskEntity } from "../../src/entities";
 import type { TaskStatus, TimeStamp, UniqueId } from "../../src/types";
+import { TaskDataMapper } from "../../src/util/mappers";
 import { task_data } from "../data";
 
-const task_entity = new TaskEntity(
-  task_data.title,
-  task_data.description,
-  task_data.due_date,
-  task_data.status,
-  task_data.categories,
-);
+const mapper = new TaskDataMapper();
+const task_entity = mapper.toEntity(task_data);
+
+describe("Test data mappers", () => {
+  test("Should return an entity", () => {
+    expectTypeOf(task_entity).toMatchTypeOf<TaskEntity>();
+  });
+});
 
 describe("Testing TaskEntity", () => {
   test("Check data types", () => {
