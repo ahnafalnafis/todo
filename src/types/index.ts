@@ -1,10 +1,3 @@
-export type Category = string;
-
-export enum TaskStatus {
-  TODO,
-  DOING,
-  DONE,
-}
-
-export type TimeStamp = Date;
-export type UniqueId = string;
+export type { TimeStamp, UniqueId } from "./basic";
+export { TaskStatus } from "./task";
+export type { Task } from "./task";

@@ -1,13 +1,11 @@
-import type { Task } from "../../src/boundaries";
+import { TaskStatus, type Task } from "../../src/types";
 
-// Some property values are empty in order to lessen table width in
-// console.table()
-export const task: Task = {
-  id: "12938129",
-  title: "Test task entities and task data models",
-  description: "",
-  creation_date: "2024-12-21",
-  due_date: "",
-  status: "todo",
-  categories: [],
+export const task_data: Task = {
+  title: "Test task entities",
+  description: "Nothing really here.",
+  due_date: new Date(2024, 2, 20, 23, 30).getTime(),
+  status: TaskStatus.TODO,
+  categories: ["very easy", "low"],
 };
+
+export const json_task_data = JSON.stringify(task_data);
