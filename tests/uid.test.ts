@@ -1,6 +1,6 @@
 import { describe, expect, expectTypeOf, test } from "vitest";
 import type { UniqueId } from "../src/types";
-import { makeUid } from "../src/util/uid";
+import { makeUid } from "../src/util";
 
 const uid = makeUid("test");
 
