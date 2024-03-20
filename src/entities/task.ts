@@ -1,16 +1,17 @@
-import type { TaskStatus, TimeStamp, UniqueId } from "@/types";
-import type { Entity } from "@/util";
-import { makeUid } from "@/util";
+import type { TaskPriority, TaskStatus, TimeStamp } from "@/types";
+import { Entity } from "@/util";
 
-export class TaskEntity implements Entity {
-  readonly id: UniqueId = makeUid("todo");
-  readonly creation_date: TimeStamp = Date.now();
-
+// FIXME: Lsp doesn't give suggestion of properties inherited from the parent
+// class.
+export class Task extends Entity {
   constructor(
     public title: string,
     public description: string,
     public due_date: TimeStamp,
     public status: TaskStatus,
+    public priority: TaskPriority,
     public categories: string[],
-  ) {}
+  ) {
+    super();
+  }
 }

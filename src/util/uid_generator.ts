@@ -1,8 +1,8 @@
-import { UniqueId } from "@/types";
+import { UniqueId } from "@/domain/types";
 
-export function makeUid(prefix = "id", separator = "-"): UniqueId {
+export function makeUid(): UniqueId {
   const random_number = Math.floor(Math.random() * 1000);
-  const hex = (Date.now() * random_number).toString(16);
+  const uid = (Date.now() * random_number).toString(16);
 
-  return prefix + separator + hex;
+  return uid;
 }

@@ -1,1 +1,2 @@
-export { TaskEntity } from "./task";
+export { Task } from "./task";
+export { User } from "./user";

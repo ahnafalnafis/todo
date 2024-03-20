@@ -2,7 +2,7 @@ import { describe, expect, expectTypeOf, test } from "vitest";
 import type { UniqueId } from "../src/types";
 import { makeUid } from "../src/util";
 
-const uid = makeUid("test");
+const uid = makeUid();
 
 describe("Test uid generator", () => {
   test("uid data type is UniqueId", () => {

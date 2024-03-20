@@ -1,5 +1,7 @@
-import type { UniqueId } from "@/types";
+import type { TimeStamp, UniqueId } from "@/types";
+import { makeUid } from "@/util";
 
-export interface Entity {
-  readonly id: UniqueId;
+export abstract class Entity {
+  readonly id: UniqueId = makeUid();
+  readonly creation_date: TimeStamp = Date.now();
 }
