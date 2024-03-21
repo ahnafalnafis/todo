@@ -1,2 +1,9 @@
-export { Entity } from "./entity";
-export { makeUid } from "./uid_generator";
+export {
+  isNull,
+  isNullAndUndefined,
+  isNullOrUndefined,
+  isStrictlyValid,
+  isValidUid,
+} from "./simple_validator";
+
+export { uid } from "./uid";
