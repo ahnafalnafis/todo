@@ -1,9 +1,2 @@
-export {
-  isNull,
-  isNullAndUndefined,
-  isNullOrUndefined,
-  isStrictlyValid,
-  isValidUid,
-} from "./simple_validator";
-
-export { uid } from "./uid";
+export { is_null_or_undefined } from "./simple_validator";
+export { create_uid } from "./uid";

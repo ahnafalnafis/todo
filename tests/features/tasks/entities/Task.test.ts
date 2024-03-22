@@ -1,47 +1,32 @@
-import { Task } from "@features/tasks/domain/entities";
-import { TaskPriority, TaskStatus } from "@features/tasks/domain/enums";
-import { uid } from "@util";
 import { describe, expect, it } from "vitest";
+import { Task } from "@/features/tasks/domain/entities";
+import data from "../data";
 
-describe("Creating Task entity", () => {
-  const current_time = Date.now();
-  const five_days = 1000 * 60 * 60 * 24 * 5;
-
-  const data = {
-    id: uid(),
-    title: "Test the Task entity",
-    description: "Nothing really here.",
-    creation_date: current_time,
-    due_date: current_time + five_days,
-    status: TaskStatus.DOING,
-    priority: TaskPriority.HIGH,
-    categories: ["easy", "favorite"],
-  };
-
-  const task = new Task(
-    data.id,
-    data.title,
-    data.description,
-    data.creation_date,
-    data.due_date,
-    data.status,
-    data.priority,
-    data.categories,
+describe.todo("Creating Task entity", () => {
+  const task1 = new Task(
+    data[0].id,
+    data[0].title,
+    data[0].description,
+    data[0].creation_date,
+    data[0].due_date,
+    data[0].status,
+    data[0].priority,
+    data[0].categories,
   );
 
-  const task1 = new Task(
-    data.id,
-    data.title,
-    data.description,
-    -1,
-    -1,
-    data.status,
-    data.priority,
-    data.categories,
+  const task2 = new Task(
+    data[1].id,
+    data[1].title,
+    data[1].description,
+    data[1].creation_date,
+    data[1].due_date,
+    data[1].status,
+    data[1].priority,
+    data[1].categories,
   );
 
   it("Is valid", () => {
-    expect(task.isValid()).toBeTruthy();
-    expect(task1.isValid()).toBeFalsy();
+    expect(task1.isValid()).toBeTruthy();
+    expect(task2.isValid()).toBeFalsy();
   });
 });

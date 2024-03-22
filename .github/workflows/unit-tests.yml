@@ -2,10 +2,14 @@ name: Unit tests
 
 on:
   push:
-    paths: ["tests/**"]
+    paths:
+      - tests/**
+      - .github/workflows/unit-tests.yml
 
   pull_request:
-    paths: ["tests/**"]
+    paths:
+      - tests/**
+      - .github/workflows/unit-tests.yml
 
 jobs:
   build:
@@ -26,7 +30,7 @@ jobs:
         uses: actions/setup-node@v3
         with:
           node-version: ${{ matrix.node-version }}
-          cache: "pnpm"
+          cache: pnpm
 
       - name: Install packages
         run: pnpm install

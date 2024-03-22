@@ -1,7 +1,5 @@
 {
   "compilerOptions": {
-    "removeComments": true,
-
     "baseUrl": ".",
     "paths": {
       "@/*": ["src/*"]

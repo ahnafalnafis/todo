@@ -1,6 +1,6 @@
-import type { UniqueId } from "@features/common/domain/types";
+import type { UniqueId } from "@/features/common/domain/types";
 
-export function uid(): UniqueId {
+export function create_uid(): UniqueId {
   const random_number = Math.floor(Math.random() * 1000);
   const uid = (Date.now() * random_number).toString(16);
 
