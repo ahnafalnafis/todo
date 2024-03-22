@@ -50,7 +50,7 @@ const data = [
 const task1 = new TaskModel().fromDict(data[0]);
 const task2 = new TaskModel().fromDict(data[1]);
 
-describe.skip("Testing use cases", () => {
+describe("Testing use cases", () => {
   it("Should add task to the database", async () => {
     await add_task.execute(task1);
     await add_task.execute(task2);

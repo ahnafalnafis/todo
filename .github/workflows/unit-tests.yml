@@ -36,7 +36,7 @@ jobs:
         run: pnpm install
 
       - name: Run unit tests
-        run: pnpm tests
+        run: pnpm run tests
 
       - name: Linting codebase
         run: pnpm lint .
