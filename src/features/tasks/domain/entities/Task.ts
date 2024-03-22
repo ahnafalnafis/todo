@@ -1,9 +1,7 @@
-import { Entity } from "@/features/common/domain/entities";
+import type { TimeStamp, UniqueId } from "@core/types";
+import { TaskPriority, TaskStatus } from "./enums";
 
-import type { TimeStamp, UniqueId } from "@/features/common/domain/types";
-import { TaskPriority, TaskStatus } from "../enums";
-
-export default class Task implements Entity {
+export default class Task {
   constructor(
     readonly id: UniqueId,
     public title: string,
@@ -12,6 +10,6 @@ export default class Task implements Entity {
     public due_date: TimeStamp,
     public status: TaskStatus,
     public priority: TaskPriority,
-    public categories: string[]
+    public categories: string[],
   ) {}
 }
